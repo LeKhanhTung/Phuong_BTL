@@ -1,6 +1,6 @@
 <?php include './header.php'; ?>
 
-<a href="./add.php" class="btn btn-success">Thêm</a>
+<a href="  " class="btn btn-danger "> Đăng xuất</a>
 <a href="./detail.php" class="btn btn-success "> Dự án</a>
 <table class="table table-responsive">
     <thead>
@@ -9,7 +9,6 @@
             <th scope="col">Họ Tên</th>          
             <th scope="col">Email</th>
             <th scope="col">Mật khẩu</th>
-            <th class="col" scope="col">Tùy chọn</th>
         </tr>
     </thead>
     <tbody>
@@ -44,11 +43,7 @@
                 echo '<td>' . $row['user_id'] . '</td>';
                 echo '<td>' . $row['name'] . '</td>';
                 echo '<td>' . $row['email'] . '</td>';
-                echo '<td>' . $row['password'] . '</td>';
-                echo '<td>
-                <a href="./edit.php?id=' . $row['user_id'] . '" class="btn btn-success">Sửa</a>
-                <a href="./delete.php?id=' . $row['user_id'] . '" class="btn btn-danger">Xoá</a>
-                </td>';
+                echo '<td>' .md5( $row['password'] ). '</td>';
                 echo '</tr>';
             }
         }
